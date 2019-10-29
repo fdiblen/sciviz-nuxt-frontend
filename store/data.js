@@ -14,7 +14,7 @@ export const mutations = {
     console.log('Payload:', payload)
     state.data = state.data.map((d) => {
       if (d.id === payload) {
-        return { id: d.id, name: d.name, url: d.url, enabled: !d.enabled }
+        return { id: d.id, name: d.name, description: d.description, enabled: !d.enabled }
       }
       return d
     })

@@ -86,7 +86,8 @@ export default {
     includeNodeModules: true,  
     clientConfigs: {       
       default: {         
-        httpEndpoint: 'http://127.0.0.1:5000/graphql',   
+        httpEndpoint: 'http://127.0.0.1:5000/graphql',
+        connectToDevTools: true  
       }     
     }
   },

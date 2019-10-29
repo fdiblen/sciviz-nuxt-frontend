@@ -316,7 +316,7 @@ export default {
       const testData = {
         id: datasetId,
         name: 'test data' + datasetId,
-        url: 'www.google.com',
+        description: 'www.google.com',
         enabled: false
       }
       console.log('Called App::loadData()')

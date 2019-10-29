@@ -38,7 +38,7 @@
                 xs4
               >
                 <v-card text tile>
-                  <v-card-media
+                  <v-img
                     :src="`https://unsplash.it/150/300?image=${Math.floor(Math.random() * 100) + 1}`"
                     height="200px"
                   />
@@ -48,7 +48,7 @@
                       <h3 class="headline mb-0">
                         {{ dataset.name }}
                       </h3>
-                      <div>data url: {{ dataset.url }}</div>
+                      <div>{{ dataset.description }}</div>
                     </div>
                   </v-card-title>
 
@@ -58,7 +58,7 @@
                       Explore
                     </v-btn>
                     <v-switch color="primary" label="Enable" @change="toggledataset(dataset.id)" />
-                    <span>Enable</span>
+
                     <v-btn text color="primary" label="Remove">
                       <v-icon @click="removedataset(dataset.id)">
                         mdi-trash-can-outline
@@ -122,11 +122,33 @@ export default {
   },
 
   created () {
+    // console.log(this.allDatasets)
 
+    // this.allDatasets.forEach(dataset => {
+    //   console.log(dataset)
+    // })
+   
   },
 
   mounted () {
-    console.log(this.allDatasets)
+
+    // console.log(this.allDatasets)
+
+    this.allDatasets.forEach(dataset => {
+      console.log(dataset.node)
+
+      // const datasetId = this.$store.getters['data/data.length'] + 1
+      const tmpDataset = {
+        id: dataset.node.id,
+        name: dataset.node.name,
+        description: dataset.node.description,
+        enabled: false
+      }
+
+      console.log('Called App::loadData()')
+      this.$store.commit('data/addDataset', tmpDataset) 
+
+    })
   },
 
   computed: {
