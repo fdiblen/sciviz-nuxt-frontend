@@ -79,6 +79,9 @@
 
 // import store from '~/store/index'
 
+import allDatasets from "~/graphql/queries/allDatasets"
+
+
 export default {
   components: {
   },
@@ -94,6 +97,38 @@ export default {
       ]
     }
   },
+
+  // apollo: {   
+  //   allDatasets: {    
+  //     query: allDatasets    
+  //       variables() {    
+  //         return {     
+  //           id: "RGF0YXNldDox"  
+  //         }
+  //     }
+  //   } 
+  // },
+
+  apollo: {
+    allDatasets: {
+      query: allDatasets,
+      // variables () {
+      //   return {
+      //     id: "RGF0YXNldDox"
+      //   }
+      // },
+      update: data => data.allDatasets.edges
+    }
+  },
+
+  created () {
+
+  },
+
+  mounted () {
+    console.log(this.allDatasets)
+  },
+
   computed: {
     datasets () {
       return this.$store.getters['data/data']

@@ -46,7 +46,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/apollo'
   ],
   /*
   ** Axios module configuration
@@ -78,6 +79,18 @@ export default {
       iconfont: 'mdi', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4'
     }
   },
+  /* GraphQL
+  Apollo client configuration
+  */
+  apollo: {     
+    includeNodeModules: true,  
+    clientConfigs: {       
+      default: {         
+        httpEndpoint: 'http://127.0.0.1:5000/graphql',   
+      }     
+    }
+  },
+
   /*
   ** Build configuration
   */

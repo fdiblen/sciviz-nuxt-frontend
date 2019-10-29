@@ -1,0 +1,13 @@
+{
+  allDatasets {
+    edges {
+      node {
+        id
+        name
+        data {
+            columns
+        }
+      }
+    }
+  }
+}

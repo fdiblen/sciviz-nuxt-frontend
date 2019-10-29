@@ -15,8 +15,10 @@
     "postdemo": "netlify deploy -d ./dist"
   },
   "dependencies": {
+    "@nuxtjs/apollo": "^4.0.0-rc16",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "graphql-tag": "^2.10.1",
     "nuxt": "^2.0.0",
     "vue-grid-layout": "^2.3.6",
     "vue-plotly": "^1.0.1"
